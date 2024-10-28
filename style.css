@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,116;100..900,300&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Kumbh Sans", serif;
 }
 header {
     height: 100vh;
@@ -20,8 +21,8 @@ header:before {
     height: 100vh;
     background-color: #181818a8;
 }
-img.logo{
-    width: 80px !important;
+img.logo {
+    width: 130px !important;
 }
 .header-top {
     display: flex;
@@ -34,14 +35,18 @@ img.logo{
 .header-top a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    text-transform: uppercase;
 }
 .header-top button {
-    width: 142px;
-    height: 50px;
+    width: 170px;
+    height: 60px;
     border-radius: 25px;
     border: none;
-    background-color: #d1d1d1;
+    background-color: #e5a64e;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .header-top img {
     width: 35px;
@@ -60,7 +65,7 @@ img.logo{
     content: "";
     width: 2px;
     height: 30px;
-    background-color: white;
+    background: white !important;
     position: absolute;
     right: 0;
     border-radius: 25px;
@@ -74,14 +79,39 @@ img.logo{
 .header-bottom-container_left button {
     width: 200px;
     height: 60px;
-    border-radius: 25px;
+    border-radius: 30px;
     border: none;
-    background: #c5c5c5;
+    background-color: #e5a64e;
     font-size: 20px;
     font-weight: bold;
+    color: white;
+    position: relative;
+    transition: color 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+}
+.header-bottom-container_left button:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #e38c12;
+    z-index: 0;
+    left: -100%;
+    top: 0;
+    border-radius: 25px;
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+.header-bottom-container_left button:hover::before {
+    left: 0;
+}
+.header-bottom-container_left button:hover{
     color: white;
 }
 .header-bottom-container_left h2 {
     font-size: 40px;
     color: white;
+    font-weight: 500;
 }
