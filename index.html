@@ -8,26 +8,223 @@
 </head>
 <body>
     <header>
-        <div class="header-top">
+        <div class="navbar" id="navbar">
+            <div class="container_a">
+                <a href="#">Inicio</a>
+                <a href="#about">Acerca de</a>
+                <a href="#adopt">Adopta</a>
+                <a href="#footer">Contáctanos</a>
+            </div>
+            <img src="img/logo.png" class="logo_fixed">
+        </div>
+        <div class="header-top" id="content_nav">
             <button>Donaciones</button>
             <a href="#">Inicio</a>
-            <a href="#">Acerca de</a>
-            <a href="#">Adopta</a>
-            <a href="#">Contáctanos</a>
+            <a href="#about">Acerca de</a>
+            <a href="#adopt">Adopta</a>
+            <a href="#footer">Contáctanos</a>
             <div class="lupa">
-                <img style="filter: invert(1) brightness(2);" src="img/lupa.png" ;/>
+            <img src="img/lupa.png"/>
             </div>
             <img src="img/logo.png" class="logo">
         </div>
         <div class="header-bottom">
             <div class="header-bottom-container">
-                <img src="img/cat.png">
-                <div class="header-bottom-container_left">
-                    <h2>Adopta una amigo. <br><br> Dale amor. <br><br> Salva una vida.</h2> <br><br>
+                <div class="header-bottom-container-right">
+                    <img src="img/dog.png" id="dog">
+
+                </div>
+                <div class="header-bottom-container_left" id="text_X">
+                    <h2>Adopta una amigo. <br><br> Dale amor. <br><br> Salva una vida.</h2> <br><br><br>
                     <button>Ver más</button>
                 </div>
             </div>
         </div>
     </header>
+    <section style="background: #e8c03f40; scroll-margin-top: 80px;" id="about">
+        <div class="about">
+            <div class="about_top">
+                <h2>Acerca de nosotros</h2>
+            </div>
+            <div class="about_bottom">
+                <div class="about_bottom_left">
+                    <h3>Misión</h3>
+                    <p>Nuestra misión es poder brindar un sistema de verificación que compruebe si el futuro dueño esté realmente capacitado para cuidar de esa pequeña vida.</p>
+                </div>
+                <div class="about_bottom_right">
+                    <h3>Visión</h3>
+                    <p>Aspiramos a ser una referencia en la protección y bienestar animal, promoviendo una adopción responsable y contribuyendo a un futuro donde todas las mascotas vivan 
+                    en hogares seguros, estables y amorosos, reduciendo así las tasas de abandono y maltrato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-color: white; padding:60px 140px; scroll-margin-top: 80px;" id="adopt">
+        <div class="adopt">
+            <h3>Adopta</h3>
+            <div class="filters">
+                <div class="select-container">
+                    <select name="Type" id="">
+                        <option value="Type" disabled selected hidden>Tipo</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Pajaro">Pájaro</option>
+                        <option value="Conejo">Conejo</option>
+                    </select>
+                </div>
+                <div class="select-container">
+                    <select name="Age" id="">
+                        <option value="Type" disabled selected hidden>Edad</option>
+                        <option value="0">0 a 2</option>
+                        <option value="3">3 a 5</option>
+                        <option value="6">6 a 8</option>
+                        <option value="9">9 a más</option>
+                    </select>
+                </div>
+                <div class="select-container">
+                    <select name="Gender" id="">
+                        <option value="Type" disabled selected hidden>Género</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                </div>
+                <div class="select-container">
+                    <select name="Size" id="">
+                        <option value="Type" disabled selected hidden>Tamaño</option>
+                        <option value="Gato">Pequeño</option>
+                        <option value="Perro">Mediano</option>
+                        <option value="Pajaro">Grande</option>
+                        <option value="Conejo">Muy Grande</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pets" id="pets" style="scroll-margin-top: 80px;">
+                <div class="container_box">
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4585458/IMG_20240929_140007.jpg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4493887/IMG_8421.jpeg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4583996/IMG_7249.jpeg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_box">
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4298031/Photoroom_20240617_213712.jpeg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4566539/IMG_7313.jpeg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4585458/IMG_20240929_140007.jpg" alt="">
+                        <div class="box_bottom">
+                            <div class="box_bottom_container">
+                                <p class="name">Name</p>
+                                <p>Caracteristicas</p>
+                                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem sit sed possimus, eius architecto blanditiis, tenetur ab illum est, nostrum nemo a veniam explicabo quidem. Modi quod sint fugit. Fugiat?</p>
+                                <div class="box_bottom_button">
+                                    <a href="info_mascota.html">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <footer id="footer" style="scroll-margin-top: 80px;">
+        <div class="footer_top">
+            <div class="footer_logo">
+                <div class="footer_logo_container">
+                    <img src="img/logo_footer.png">
+                </div>
+            </div>
+            <div class="flex_column">
+                <h4>Accesos directos</h4>
+                <a href="#">Inicio</a>
+                <a href="#about">Acerca de nosotros</a>
+                <a href="#adopt">Adopta</a>
+                <a href="">Ayuda</a>
+            </div>
+            <div class="flex_column">
+                <h4>Refugios asociados</h4>
+                <a href="#">Inicio</a>
+                <a href="#">Acerca de nosotros</a>
+                <a href="#">Adopta</a>
+                <a href="">Ayuda</a>
+            </div>
+            <div class="contact">
+                <h4>Contactos</h4>
+                <div class="contac_div">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAdJJREFUSEudVIlxAjEMXHUClYRUQqiEu0pCJ5BKcCfKya9kyweJZxgYY2m10q4I/zkEgIH8FTPs/Xb/jQE6SqcZ7udVytO/H4dBS0IgsBBMJbViTNQ3gAMIFzCCT2QXJXdFwPpDuINxyuG3rYiVgFAqct4P87BsbMQdwMle0QqwAIU6LD2gV0Q6+pzkYDVB4HVjsOyPsnbdzkDTAfgZe19EZ6tbt7fLO8IyBLuADGCVmxX6AOPzHcn1HdTZRD1f3QyEcmDCsWovI0Y5zjyRUZRMY5QkFxB1KAB8HCufeVfX68v0CZY5FP/TMTJoF8VCaV+YWvyraooc0LUpynQxy+aNpE1T9XGVzAEM8UNikY60KFRSic2BwFcm/GyMb22wdijJyaP2FoCvCkCSi4IiCAhShDAtphQJZzOOXXMA4iPP1ReABUTAjeMJEDPeAApNXWbI2lWVUvVFcXjblHZr5rofAC6VKXwVxVWhVq7jjb6vpsfR8QmwAMz83wS5MHCWwWppTjzmAPiT7mcjPT8TcOI05FKkxpQWpXUycbIb5VQqYPL5yIoSSdfkxuO73XH2vq5ucLJWqNJMv527hs22mV4AWRTOekpGGxozeVlW52vaNecvgG/LItOmfDcAAAAASUVORK5CYII="/>
+                    <p>(01)123547</p>
+                </div>
+                <div class="contac_div">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAclJREFUSEuFVcFhwzAIPDZpN3E3SSZxMknSSeJNmk1US0LisETcR9sAOuAOiAiAVH4B/D/yz+BUU3FG8WOMhvs/mrPBMOQk3qKPzuyJkHsp8fP2lClgOCkk+OoiNLafZDwy2zIsAB4Avjq/yrQgqU5RFmd/A+kKYGs4LcFrN+YkhfcCOmF+orvpZEy9k+C7DU4bh6SV3pFk5aqHZDGNTyRcLI/TwE0r0aXdfORdiBaphdayIdaypLIM6lAtLoCstiQ84z3jE5Crgmb9/mimeIo65W8Av3vQTTVYBHikIr5rI8epmMW+QPDqPJTgA0W2nsV73xPcVOdc2WVHWfXzM4NrOvN5GkOKOM/QjTo37TdrlafP92aD6BatajA/Tvf9TesmPy9VC7C2O+b3tyOpyNXbxt72wLfcutmSVj0B5V4qRRRUE0RnZY7G1uNbSlBBqYPJu5MrMVmT4xTpHgxAk5bYFHVc99NTFBUZcW3nZBoxaPASYKlT4ctiUySFFVdK35LgJ+OwyHmm8yLpRW1Qc3ZpY4/XlzbcUzQuC5/rqI2TGOrAfwfYyLI9VmnSZ4fotDKPbu+I+AFo6Myf93qu/djbp09lhY/8XfoHmxLlHqj3AYcAAAAASUVORK5CYII="/>
+                    <p>Contactos@email.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <h3>Con el apollo de</h3>
+            <div class="logos_asosiaciones">
+                <img src="https://cdn.www.gob.pe/uploads/document/file/2772011/Logotipo%20RENIEC.png?v=1642696746">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
