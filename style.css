@@ -208,43 +208,76 @@ input.search-bar {
     outline: none;
     z-index: 4;
 }
-
+/*ACERCA DE*/
 .about {
     display: flex;
     flex-direction: column;
-    padding: 110px 150px;
-    gap: 80px;
+    padding: 80px 150px;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Para que los pseudoelementos se ubiquen correctamente */
 }
 
 .about_top {
-    font-size: 30px;
+    font-size: 32px;
     text-align: center;
+    color: #3c3c3c;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
+
+.about_bottom h3::after {
+    content: "";
+    width: 70%;
+    border: 1px dashed;
+}
+
 .about_bottom {
     display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     gap: 60px;
+    align-items: flex-start;
+    position: relative;
 }
+.about_bottom:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 175px;
+    background: #00000026;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .about_bottom_left, .about_bottom_right {
     display: grid;
-    width: 50%;
-    align-items: center;
-    text-align: initial;
-    gap: 25px;
+    width: 45%;
+    align-items: flex-start;
+    gap: 20px;
 }
+
 .about_bottom_left h3, .about_bottom_right h3 {
-    font-size: 30px;
+    font-size: 28px;
     text-transform: uppercase;
+    font-weight: 600;
     letter-spacing: 2px;
-    font-weight: 400;
     color: #3c3c3c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .about_bottom_left p, .about_bottom_right p {
+    font-size: 16px;
+    line-height: 1.6;
     letter-spacing: 1px;
     color: #565656;
+    text-align: justify;
 }
+/*ADOPTA*/
 .adopt {
     display: grid;
     gap: 70px;
@@ -414,7 +447,7 @@ footer#footer {
 .footer_top {
     display: flex;
     justify-content: space-around;
-    align-items: initial;
+    align-items: flex-start;
     padding: 70px 0;
 }
 .footer_top h4 {
@@ -488,10 +521,11 @@ footer#footer {
 }
 .logos_asosiaciones {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .logos_asosiaciones img {
     width: 300px;
+    border-radius: 20px;
 }
 .footer_bottom {
     display: grid;
