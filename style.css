@@ -276,7 +276,9 @@ input.search-bar {
     letter-spacing: 1px;
     color: #565656;
     text-align: justify;
+    text-shadow: 0 0 20px #261c00;
 }
+
 /*ADOPTA*/
 .adopt {
     display: grid;
@@ -355,15 +357,19 @@ select {
     align-items: center;
     justify-content: center;
 }
-.box img {
+.box_img {
     height: 65%;
     width: 100%;
     border-radius: 20px 20px 0 0;
+    background-size: cover;
+    background-position: center;
 }
 p.name {
     font-size: 20px !important;
-    font-weight: 500;
-    color: black !important;
+    font-weight: bold;
+    color: #007BFF !important;
+    letter-spacing: 1px;
+    text-shadow: 0 0 2px #0000008c;
 }
 p.info {
     font-size: 13px !important;
@@ -371,7 +377,7 @@ p.info {
 }
 .box_bottom p {
     font-size: 15px;
-    color: #524b5b;
+    color: #36333a;
 }
 .box_bottom a {
     width: 100px;

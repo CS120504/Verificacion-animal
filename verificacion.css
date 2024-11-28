@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.container input[type="number"], .container input[type="email"], .container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.container input[type="number"]:focus,
+.container input[type="email"]:focus,
+.container input[type="file"]:focus {
+    border-color: #4CAF50;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    margin: 0 10px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label span {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ddd;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.radio-group input[type="radio"]:checked + span {
+    background-color: #ede87b;
+    color: black;
+}
+
+.container button:hover {
+    background-color: #d5b13d;
+}
+.container button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E8C03F;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.custom-file-input input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.custom-file-input .file-label {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #555;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambios de estilo al pasar el cursor */
+.custom-file-input .file-label:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.custom-file-input input[type="file"]:valid + .file-label::after {
+    content: ' (archivo seleccionado)';
+    color: #4CAF50;
+    font-weight: bold;
+}

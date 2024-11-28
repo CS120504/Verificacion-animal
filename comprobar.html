@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,116;100..900,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "Kumbh Sans", serif;
+    }
+    body {
+        display: flex    ;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .loading-ring{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+    }
+    .loading-ring div{
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        margin: 8px;
+        border: 3px solid dodgerblue;
+        border-radius: 50px;
+        border-color: dodgerblue transparent transparent transparent;
+        animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+    .loading-ring div:nth-child(1){
+        animation-delay: -0.45s;
+    }
+    .loading-ring div:nth-child(2){
+        animation-delay: -0.3s;
+    }
+    .loading-ring div:nth-child(3){
+        animation-delay: -0.15s;
+    }
+    @keyframes loading{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<body>
+    <div class="loading-ring" id="loading-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <style>
+    .checkmark {
+      display: none; /* Ocultamos por defecto */
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #2ecc71;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .checkmark .check {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      stroke: white;
+      stroke-width: 8;
+      fill: none;
+      animation: checkAnimation 2s ease-in-out forwards;
+      animation-delay: 5s;
+    }
+
+    @keyframes checkAnimation {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .content_check {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    }
+
+    button#boton:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        background-color: hsl(207deg 100% 35.43%);
+        z-index: -1;
+}
+
+    button#boton {
+        width: 250px;
+        background: #007BFF;
+        border: none;
+        cursor: pointer;
+        height: 80px;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        text-shadow: 0px 1px 6px #000000c7;
+        position: relative;
+        display: flex    ;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    button#boton:hover:before{
+        transform: translateX(0%);
+    }
+        .overlay {
+      display: none; /* Inicialmente oculto */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+      z-index: 999; /* Asegura que esté encima de todo el contenido */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilo para el mensaje */
+    .mensaje {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+}
+
+    /* El botón de continuar */
+    #boton_final {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 140px;
+        height: 50px;
+        font-size: 15px;
+}
+
+    #boton_final:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<div class="content_check">
+    <h1 id="title" style="opacity: 0;transition: opacity 0.5s ease-in-out;">Verificación Completada</h1>
+    <div class="checkmark" id="checkmark">
+        <svg width="210" height="210" viewBox="0 0 70 70">
+            <path class="check" d="M20 35 L30 50 L50 20" />
+          </svg>
+      </div>
+      <button id="boton">Finalizar Verificación</button>
+      <div class="overlay" id="overlay">
+        <div class="mensaje" id="mensaje">
+            <h2>¡AVISO!</h2>
+            <p>Se le hará un test psicológico, de forma presencial, en el albergue seleccionado.</p>
+            <button id="boton_final">Continuar</button>
+        </div>
+    </div>
+</div>
+
+
+  <script>
+    // Al cargar, ocultamos el check y mostramos solo el loader
+    window.onload = () => {
+      const loaderContainer = document.getElementById('loading-ring');
+      const checkmark = document.getElementById('checkmark');
+      const title = document.getElementById('title');
+      const boton = document.getElementById('boton');
+    const overlay = document.getElementById('overlay');
+    const botonFinal = document.getElementById('boton_final');
+
+
+      setTimeout(() => {
+        loaderContainer.style.opacity = '0'; // Desaparece el primer div
+            }, 4000);
+
+            // Después de ocultar el primer div, mostramos el segundo div
+            setTimeout(() => {
+                checkmark.style.opacity = '1'; // Aparece el segundo div
+            }, 4700);
+            setTimeout(() => {
+                title.style.opacity = '1'; // Aparece el segundo div
+            }, 6000);
+            setTimeout(() => {
+                boton.style.opacity = '1'; // Aparece el segundo div
+            }, 6500);
+            boton.addEventListener('click', function() {
+      overlay.style.display = 'flex'; // Muestra el fondo oscuro
+    });
+
+    // Evento de clic en el botón de "Continuar"
+    botonFinal.addEventListener('click', function() {
+      overlay.style.display = 'none'; // Oculta el fondo oscuro y el mensaje
+      // Redirigir a index.html después de 0.5 segundos (puedes ajustar el tiempo si quieres)
+      setTimeout(function() {
+        window.location.href = 'index.html'; // Redirige a la página de inicio
+      }, 500); // 500 ms de espera antes de la redirección
+    });
+    };
+
+  </script>
+</body>
+</html>

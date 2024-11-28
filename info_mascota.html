@@ -3,42 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de mascota</title>
+    <title>Información de la mascota</title>
     <link rel="stylesheet" href="target.css">
 </head>
 <body>
-    <main>
-        <div class="content_full">
-            <div class="content_left">
-                <div class="content_imgs">
-                    <div class="img_large" style="background-image: url(https://s3.amazonaws.com/petstablished-app-beta/uploads/image/image/4585458/IMG_20240929_140007.jpg);"></div>
-                    <div class="imgs">
-                        <div class="img_small" style="background-image: url(https://s3.us-east-1.amazonaws.com/petstablished-app-beta/uploads/image/image/4585320/IMG_20240929_121217.jpg);"></div>
-                        <div class="img_small" style="background-image: url(https://s3.us-east-1.amazonaws.com/petstablished-app-beta/uploads/image/image/4581942/Messenger_creation_DBA7498E-DA72-45C9-8C1C-835B0E0009E3.png);"></div>
-                        <div class="img_small" style="background-image: url(https://s3.us-east-1.amazonaws.com/petstablished-app-beta/uploads/image/image/4585460/IMG_20240929_140013.jpg);"></div>
+    <main id="contenedor-mascota"></main>
+    <script>
+        // Datos simulados de mascotas
+        const datosMascotas = {
+            "1": {
+                "nombre": "Anubis",
+                "caracteristicas": "Color marrón, mediano",
+                "edad": "2 años",
+                "tamaño": "Mediano",
+                "tipo": "Perro",
+                "genero": "Macho",
+                "descripcion": "Anubis fue encontrado en un estado crítico, quemado por agua caliente. Después de recibir atención veterinaria urgente y tratamiento para sanar sus quemaduras, ha logrado recuperarse y está buscando un hogar amoroso donde pueda sentirse seguro y amado nuevamente.",
+                "img_large": "img/1.3.jpg",
+                "imgs": ["img/1.1.jpg", "img/1.2.jpg", "img/1.4.jpg"]
+            },
+            "2": {
+                "nombre": "Pedro",
+                "caracteristicas": "Color crema, grande",
+                "edad": "3 años",
+                "tamaño": "Grande",
+                "tipo": "Gato",
+                "genero": "Macho",
+                "descripcion": "Fue encontrado herido en el cuello, curado y posteriormente adoptado, sin embargo el gato se negó a irse y actualmente vive en el albergue.",
+                "img_large": "img/1.jpg",
+                "imgs": ["img/2.jpg", "img/3.jpg", "img/4.jpg"]
+            },
+            "3": {
+                "nombre": "Mocho",
+                "caracteristicas": "Color crema, mediano",
+                "edad": "10 años",
+                "tamaño": "Mediano",
+                "tipo": "Perro",
+                "genero": "Macho",
+                "descripcion": "Este tierno animal fue encontrado en un estado de total negligencia por parte de sus antiguos dueños, quienes lamentablemente no pudieron ofrecerles el cuidado y el amor que necesitaban. Junto con su hermano Grupi y otros dos perritos, fueron heredados tras el fallecimiento de su antigua dueña a causa de un derrame cerebral.",
+                "img_large": "img/2.2.jpg",
+                "imgs": ["img/2.1.jpg", "img/2.3.jpg", "img/2.4.jpg"]
+            },
+            "4": {
+                "nombre": "Grupi",
+                "caracteristicas": "Color blanco, grande",
+                "edad": "9 años",
+                "tamaño": "Grande",
+                "tipo": "Perro",
+                "genero": "Macho",
+                "descripcion": "Este tierno animal fue encontrado en un estado de total negligencia por parte de sus antiguos dueños, quienes lamentablemente no pudieron ofrecerles el cuidado y el amor que necesitaban. Junto con su hermano Grupi y otros dos perritos, fueron heredados tras el fallecimiento de su antigua dueña a causa de un derrame cerebral.",
+                "img_large": "img/3.1.jpg",
+                "imgs": ["img/3.2.jpg", "img/3.3.jpg", "img/3.4.jpg"]
+            },
+            "5": {
+                "nombre": "Zeus",
+                "caracteristicas": "Bully americano, grande",
+                "edad": "3 años",
+                "tamaño": "Grande",
+                "tipo": "Perro",
+                "genero": "Macho",
+                "descripcion": "Lo dejaron tirado en la entrada del albergue en un día de calor, lanzado desde un auto en marcha. A pesar de todo, ha mostrado mucha valentía y se recuperó rápido. Ahora solo espera encontrar un hogar donde lo cuiden y lo quieran de verdad.",
+                "img_large": "img/4.2.jpg",
+                "imgs": ["img/4.1.jpeg", "img/4.3.jpeg", "img/4.4.jpeg"]
+            },
+            "6": {
+                "nombre": "Osa",
+                "caracteristicas": "Color negro y marron, mediano",
+                "edad": "14 años",
+                "tamaño": "Mediano",
+                "tipo": "Perro",
+                "genero": "Hembra",
+                "descripcion": "Anubis fue encontrado en un estado crítico, quemado por agua caliente. Después de recibir atención veterinaria urgente y tratamiento para sanar sus quemaduras, ha logrado recuperarse y está buscando un hogar amoroso donde pueda sentirse seguro y amado nuevamente.",
+                "img_large": "img/5.1.jpg",
+                "imgs": ["img/5.2.jpg", "img/5.3.jpg", "img/5.4.jpg"]
+            },
+        };
+
+        // Obtener el parámetro 'animal' de la URL
+        const params = new URLSearchParams(window.location.search);
+        const animal = params.get('animal');
+
+        // Verificar si el animal existe y mostrar la información
+        if (animal && datosMascotas[animal]) {
+            const mascota = datosMascotas[animal];
+            document.getElementById('contenedor-mascota').innerHTML = `
+                <div class="content_full">
+                    <div class="content_left">
+                        <div class="content_imgs">
+                            <div class="img_large" style="background-image: url(${mascota.img_large});"></div>
+                            <div class="imgs">
+                                ${mascota.imgs.map(img => `<div class="img_small" style="background-image: url(${img});"></div>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content_right">
+                        <h1>${mascota.nombre}</h1>
+                        <h2>${mascota.caracteristicas}</h2>
+                        <a href="verificacion_animal.html" class="boton">Adoptar</a>
+                        <p>${mascota.descripcion}</p>
+                        <div class="linea"></div>
+                        <div class="info_content">
+                            <div class="info_left">
+                                <p><span class="label">Edad:</span> ${mascota.edad}</p>
+                                <p><span class="label">Tamaño:</span> ${mascota.tamaño}</p>
+                                <p><span class="label">Tipo:</span> ${mascota.tipo}</p>
+                                <p><span class="label">Género:</span> ${mascota.genero}</p>
+                            </div>
+                            <div class="info_right">
+                                <a href="https://maps.app.goo.gl/gyJKBSiWEH6sAXVBA">Ver en Google Maps</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="content_right">
-                <h1>Name</h1>
-                <h2>Caracteristicas</h2>
-                <a href="#">Adoptar</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur consequatur nemo magnam totam ipsum, rerum mollitia qui in praesentium itaque aut suscipit voluptatibus atque laboriosam aliquid, tenetur fuga assumenda. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque nihil, cupiditate molestiae vero, doloribus voluptatum placeat magnam, nisi nemo deleniti ut totam laborum voluptas quisquam ipsum praesentium consequuntur facere unde.</p>
-                <div class="linea"></div>
-                <div class="info_content">
-                    <div class="info_left">
-                        <p>Name: NAME</p>
-                        <p>Edad: X</p>
-                        <p>Tamaño: X</p>
-                        <p>Tipo: X</p>
-                        <p>Genero: X</p>
-                    </div>
-                    <div class="info_right">
-                        <img src="img/map.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+            `;
+        } else {
+            document.getElementById('contenedor-mascota').innerHTML = '<p>Mascota no encontrada.</p>';
+        }
+    </script>
 </body>
 </html>
